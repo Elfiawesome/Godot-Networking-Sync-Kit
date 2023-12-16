@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5sq5tk1rpcvr"]
+
+[ext_resource type="Script" path="res://scenes/rooms/gameworld/player_con.gd" id="1_b3tpm"]
+[ext_resource type="Texture2D" uid="uid://b478a43vpd0sq" path="res://icon.svg" id="2_v7br4"]
+
+[node name="player" type="Node2D"]
+script = ExtResource("1_b3tpm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v7br4")
+
+[node name="MarginContainer" type="MarginContainer" parent="Sprite2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = -64.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = -30
+
+[node name="Control" type="Control" parent="Sprite2D/MarginContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="Sprite2D/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "name here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DebugPos" type="Label" parent="Sprite2D/MarginContainer/Control"]
+modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "(0,0)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
